@@ -1,0 +1,9 @@
+mouredev.com/python
+Lenguaje backend en servidos, Jango.. 
+
+
+Configurar Python desde Cero.
+Los comentarios en python son con #almohadillas.
+Las Variables se crean usando el camelCase sin decir que es una variable como en otro lenguaje..
+
+Lo mas correcto es usar los 
