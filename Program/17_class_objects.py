@@ -125,3 +125,5 @@ del p1
 
 class Person: 
     pass
+
+# Exercise
