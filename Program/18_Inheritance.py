@@ -66,3 +66,4 @@ x.printyear()
 """Add Methods"""
 # Add a Method called welcome to the Student class:
 
+#exercises
