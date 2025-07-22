@@ -75,6 +75,10 @@ class Student(Person):
         print("Welcome", self.firstname, self.lastname, "to the class of", self.graduationyear)
 
 p1 = Student('Adrian','Hernandez', 2026)
-p1.welcome()
+p1.welcome() #--> Welcome Adrian Hernandez to the class of 2026
+p2 = Student('Mathias','Hernandez', 2031)
+p3 = Student('Sofia', 'Hernandez', 2032)
+p2.welcome() #--> Welcome Mathias Hernandez to the class of 2031
+p3.welcome() #--> Welcome Sofia Hernandez to the class of 2032
 
 # If you add a method in the child class with the same name, as a function in the parent class, the inheritance of the parent method will be overriden.

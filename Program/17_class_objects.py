@@ -123,7 +123,34 @@ del p1
 """the pass statement"""
 # Class definitions cannot be empty, but if you some reason have a class definition with no content, put in the pass statement to avoid geting an error.
 
-class Person: 
-    pass
+class Emptyclass:
+    pass # Evita el error, no puedo dejar la funcion vacia. 
 
-# Exercise
+
+print(Emptyclass) # --> <class '__main__.Emptyclass'>
+
+
+class Myperson:
+    def __init__(self, name, surname):
+        self.name_base = name
+        self.surname = surname
+    
+myperson = Myperson('Adrian', 'Hernandez')
+print(myperson.name_base, myperson.surname) #--> Adrian Hernandez
+
+class Myperson2:
+    def __init__(self, name, surname):
+        self.full_name = f"{name} {surname}"
+    
+myperson2 = Myperson2('karina', 'Jimenez')
+print(myperson2.full_name)
+
+class Persona2:
+    def __init__(self, name,surname):
+        self.fulname = f'{name} {surname}'
+    
+    def walk(self):
+        print(f'{self.fulname} its walking')
+        
+myperson1 = Persona2("Mathias","Hernandez")
+myperson1.walk() 
