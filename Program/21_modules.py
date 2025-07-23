@@ -34,5 +34,28 @@ print(a) #--> 42
 import mymodule as mx # --> aqui cambiamos el nombre del modulo.
 
 a = mx.person1['age']
-print (a)
+print (a) # --> 42
 
+"""Built-in Modules"""
+# There are several built-in modules in Python, which you can import whenever you like.
+# Example: import and use the platform module.
+
+import platform
+
+x = platform.system()
+print(x) # -- > Linux
+
+"""Using the dir() Function"""
+# There is a built-in function to list all the function names (or variable names) in a module. The dir() function.
+import platform
+x = dir(platform)
+print(x)
+# the dir () function can be used on all modules, also the ones you create yourself.
+
+"""Import From Modules"""
+# You can choose to import only parts from a module, by using the from keyword.
+
+# Example: The module named mymodule has one function and one dictionary.
+
+from mymodule import person1
+print (person1["age"]) # --> 42
