@@ -72,3 +72,6 @@ print(x)
 
 from mymodule import person1
 print (person1["age"]) # --> 42
+
+# When importing using the from keyword, do not use the module name when refering to elements in the module.
+#Example: person1['age'], not mymodule.person1['age']
