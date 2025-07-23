@@ -15,3 +15,46 @@ print(len(x)) #--> 12
 mytuple = ('Computer','Laptop','Tablet')
 print(len(mytuple)) #--> 3
 
+"""Dictionary"""
+# For dictionaries len() returns the numbers of key/value pairs in the dictionary.
+thisdict = {
+    'brand' : 'Dell',
+    'model' : 'Alienware',
+    'Year': 2024
+}
+print(len(thisdict)) # --> 3
+
+"""class Polymorphism"""
+# Polymorphism is often used in Class methods, where we can have multiple classes with the same method name
+# for example, say we have three classes: Car, Boat, and Plane, and they all have a method called move():
+# Example: Different classes with the same method:
+class Car:
+    def __init__(self, brand,model):
+        self.brand = brand
+        self.model = model
+
+    def move(self):
+        print("Drive!")
+
+class Boat:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+    def move(self):
+        print("Sail!")
+
+class Plane:
+    def __init__(self, brand, model):
+        self.brand =  brand
+        self.model =  model
+
+    def move(self):
+        print("Fly!")
+
+car1 = Car('ford','Mustang')
+boat1 = Boat('Ibiza','Tour 2025')
+plane1 = Plane('Boeing','747')
+
+for x in (car1, boat1, plane1):
+    x.move()
