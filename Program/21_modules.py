@@ -1,6 +1,5 @@
 """Modules"""
 
-
 """Whats is a module"""
 
 # consider a module to be the same as clde library.
@@ -47,7 +46,6 @@ print(x) # -- > Linux
 
 """Using the dir() Function"""
 # There is a built-in function to list all the function names (or variable names) in a module. The dir() function.
-
 
 """Built-in Modules"""
 # There are several built-in modules in Python, which you can import whenever you like.
