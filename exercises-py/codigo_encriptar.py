@@ -23,7 +23,7 @@ def encriptarArchivo(rutaArchivo):
     file.close()
     textoEncriptado = encriptar(texto)
 
-    file = open(rutaArchivo,'w') # w permite reemplazar todo.
+    file = open(rutaArchivo,'w') # w permite reemplazar
     file.write(textoEncriptado)
     file.close()
     print("Archivo encriptado")
@@ -34,7 +34,7 @@ def desencriptarArchivo(rutaArchivo ):
     file.close()
     textoDesencriptado = desencriptar(texto)
 
-    file = open(rutaArchivo,'w') # w permite reemplazar todo.
+    file = open(rutaArchivo,'w') # w permite reemplazar
     file.write(textoDesencriptado)
     file.close()
     print("Archivo Desencriptado")

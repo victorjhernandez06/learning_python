@@ -26,6 +26,42 @@ def desencriptar(texto):
         contador += 1
     return textofinal
 
-file = open('text.txt','a')
-file.write('Test save on directories')
-file.close()
+# encriptar("prueba de texto")
+# print("")
+# desencriptar('pxrxuxexbxax xdxex xtxexxxtxox')
+
+def encriptarArchivo(rutaArchivo):
+    file = open(rutaArchivo,'r')
+    texto = file.read()
+    file.close()
+    textoEncriptado = encriptar(texto)
+
+    file = open(rutaArchivo,'w') # w permite reemplazar todo.
+    file.write(textoEncriptado)
+    file.close()
+    print("Archivo encriptado")
+
+def desencriptarArchivo(rutaArchivo ):
+    file = open(rutaArchivo,'r')
+    texto = file.read()
+    file.close()
+    textoDesencriptado = desencriptar(texto)
+
+    file = open(rutaArchivo,'w') # w permite reemplazar todo.
+    file.write(textoDesencriptado)
+    file.close()
+    print("Archivo Desencriptado")
+
+# encriptarArchivo()
+# desencriptarArchivo()
+
+respuestaEoD = input("presion 'E' para encriptar o 'D' para desencriptar: ")
+rutaArchivo = input('Ingrese la ruta del archivo: ')
+
+if respuestaEoD == 'E':
+    encriptarArchivo(rutaArchivo)
+elif respuestaEoD == 'D':
+    desencriptarArchivo(rutaArchivo)
+else:
+    print('Elige una de las dos opciones, E=Encriptar, D=Desencriptar')
+
