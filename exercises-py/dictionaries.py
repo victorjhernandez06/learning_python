@@ -38,12 +38,3 @@ for letter in texto:
 
 print(textofinal2)
 
-"""ENCRIPTAR INFORMACION CON PYTHON"""
-tarjeta_de_credito: 344-1223-23323
-codigo_de_seguridad: 323
-
-tarjeta_de_credito: 344-1223-23323
-codigo_de_seguridad: 323
-
-email: victor1@gmail.com
-pass: victor112233*
