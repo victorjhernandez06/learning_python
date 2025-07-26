@@ -4,3 +4,6 @@ class Persona:
         self.apellido = apellido
         self.dni = dni
         self.telefono = telefono
+
+    def __str__(self):
+        return self.nombre + ' ' + self.apellido + ' - ' + self.dni

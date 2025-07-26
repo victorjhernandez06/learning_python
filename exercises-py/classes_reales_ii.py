@@ -1,10 +1,25 @@
 from empleado import Empleado
 from Cliente import Cliente
 
+def cargar():
+    respuesta = input('van a agregar a un empleado? ')
+    nombre = input("ingrese el nombre: ")
+    apellido = input("ingrese el apellido: ")
+    dni = input("ingrese el dni: ")
+    telefono = input("ingrese el telefono: ")
 
-emp = Empleado('Victor', 'Hernandez','1234','1818','2300')
+    if (respuesta == 'si'):
+        salario = input('Ingresa el salario: ')
+        emp = Empleado(nombre, apellido, dni, telefono, int(salario))
+        personas.append(emp)
+    else:
+        tipo = input('Ingresa el tipo de cliente: ')
+        cliente = Cliente(nombre, apellido, dni, telefono, tipo)
+        personas.append(cliente)
 
-cliente = Cliente('Karina', 'Jimenez','123','0258','VIP')
+personas = []
+cargar()
+cargar()
 
-print(emp.apellido, emp.nombre)
-print(cliente.apellido, cliente.nombre)
+for persona in personas:
+    print (persona)
