@@ -1,0 +1,3 @@
+for i in $(seq 10 100); do
+	touch "ejercicio_$i.py"
+done
