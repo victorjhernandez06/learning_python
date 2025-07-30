@@ -211,3 +211,65 @@ print(re.findall(pattern,text, re.X))
 
 
 
+"""Special Sequences"""
+# A special sequence is a \ followed by one of the characters in the list bellow, and has special meaning.
+
+txt = "The rain in Spain"
+#check if the string starts with "The":
+x = re.findall("\AThe", txt)
+print(x)
+if x:
+    print("Yes,  there is a match")
+else:
+    print("No match")
+
+# ['The']
+# Yes,  there is a match
+
+
+# Returns a match where the specified characters are the beginning or at the end of a word.
+txt =  "The rain in Spain"
+#Check if "ain" is present at the beginning of a WORD:
+x = re.findall(r"\bain", txt)
+print(x)
+if x:
+    print("Yes, there is at last one match!")
+else:
+    print("No match")
+# []
+# No match
+
+# (the "r" in the beginning is making sure that the string is being treated as a "raw string")
+txt = "The rain in Spain"
+#Check if "ain" is present at the end of a WORD:
+x = re.findall(r"in\b", txt)
+print(x)
+if x:
+    print("Yes, there is at least one match!")
+else:
+    print("No match")
+# ['in', 'in', 'in']
+# Yes, there is at least one match!
+
+"""\B"""
+# Returns a match where the specified charaters are present,but NOT at the beginning (or at the end) of a word.
+
+txt = "The rain in Spain"
+#Check if "ain" is present,but NOT at the beginning of a word.
+x = re.findall(r"\Bain",txt)
+print(x)
+if x:
+    print("Yes, there is at least one match!")
+else:
+    print("no match")
+
+txt = "The rain in Spain"
+#Check if "ain" is present, but NOT at the end of a word:
+x = re.findall(r"ain\B",txt)
+print(x)
+if x:
+    print("Yes, there is at least one match!")
+else:
+    print("No match")
+
+# (The "r" in the beginning is making sure that the string is being treated as a "raw string"
