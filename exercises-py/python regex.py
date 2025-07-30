@@ -32,4 +32,182 @@ x = re.search("^The.*Spain$", txt)
 
 # [] --> A set characters --> "[a-m]"
 # \ signals a special sequence (can also be used to escape to special characters) --> "\d"
-# . Any characters (except newline character) --> "he..o"
+# . --> Any characters (except newline character) --> "he..o"
+# ^ --> Ends with --> "^hello"
+
+txt = "the rain in Spain"
+
+# find all lower case characters alphabetically between "a" and "m"
+x = re.findall('[a-m]', txt)
+print(x) #--> ['h', 'e', 'a', 'i', 'i', 'a', 'i']
+
+txt2 = "That will be 59 dollars"
+#Find all digit characters:
+x1 = re.findall("\d", txt2)
+print(x1) #--> ['5', '9']
+
+txt3 = "hello planet"
+#Search for a sequence that starts with "he" followed bt two (any) characters, and "0"
+x2 = re.findall("he..o",txt3)
+print(x2) #--> ['hello']
+
+txt4 = "hello planet"
+#Check if the string starts with 'hello':
+x3  = re.findall("^hello", txt4)
+if x3:
+    print("Yes, the string starts with 'hello'")
+else:
+    print("No match")
+# --> Yes, the string starts with 'hello' <-- #
+
+txt5 = "hello planet"
+#check if the string ends with 'planet'
+x4 = re.findall("planet$",txt5)
+if x3:
+    print("Yes, the string starts with 'planet'")
+else:
+    print("No match")
+# --> Yes, the string starts with 'planet' <-- #
+
+txt6 = "hello planet"
+#Search for a sequence that starts with "he", followed by 0 or more (any) characters, and an "o"
+x5  = re.findall("he.*o",txt6)
+print(x5)
+# --> ['hello'] <-- #
+
+txt7 = "hello planet"
+#Search for a sequence that starts with "he" followed by 1 or more (any) characters, and an "o"
+x6 = re.findall("he.+o",txt7)
+print(x6)
+# --> ['hello'] <-- #
+
+txt8 = "hello planet"
+#Searcch for a sequence that starts with "he" followed by 0 by 1 (any) character, and an "o"
+x7 = re.findall("he.?o",txt8)
+print(x7)
+# --> [] <-- #
+
+text9 = "hello planet"
+#Search for a sequence that starts with "he" followed exactly 2(any) characters, and an "o"
+x8 = re.findall("he.{2}o",text9)
+print(x8)
+# --> ['hello'] <-- #
+
+txt10 = "The rain in Spain falls mainly in the plain!"
+# Check if the string contains either "falls" or "stays":
+x9 = re.findall("falls|stays", txt10)
+print(x9)
+if x9:
+    print("Yes, there is at least one match!")
+else:
+    print("No match")
+
+# --> ['falls'] <-- #
+# --> Yes, there is at least one match! <-- #
+
+"""Flags"""
+# You can add flags to the pattern when using regular expressions.
+import re
+
+txt = "Åland"
+
+#Find all ASCII matches:
+print(re.findall("\w", txt, re.ASCII))
+
+#Without the flag, the example would return all character:
+print(re.findall("\w", txt))
+
+#Same result using the shorthand re.A flag:
+print(re.findall("\w", txt, re.A))
+
+text = "The rain in Spain"
+#Use a case - insensitive search when finding a match for Spain in the text:
+print(re.findall("spain",txt,re.DEBUG))
+# LITERAL 115
+# LITERAL 112
+# LITERAL 97
+# LITERAL 105
+# LITERAL 110
+#
+#  0. INFO 16 0b11 5 5 (to 17)
+#       prefix_skip 5
+#       prefix [0x73, 0x70, 0x61, 0x69, 0x6e] ('spain')
+#       overlap [0, 0, 0, 0, 0]
+# 17: LITERAL 0x73 ('s')
+# 19. LITERAL 0x70 ('p')
+# 21. LITERAL 0x61 ('a')
+# 23. LITERAL 0x69 ('i')
+# 25. LITERAL 0x6e ('n')
+# 27. SUCCESS
+
+txt = """ Hi
+me 
+name
+is 
+Sally"""
+#Search for sequence that starts with "me" followed by one character, even a newline charactarer, and continues with "is":
+print(re.findall("me.is", txt, re.DOTALL))
+# ['me\nis']
+#This example would return no match without the re.DOTALL flag:
+print(re.findall("me.is", txt))
+# []
+#Same result with the shorthand re.S flag:
+print(re.findall("me.is", txt , re.S))
+# ['me\nis']
+
+
+
+txt = "The rain in Spain"
+#Use a case-insensitive search when finding a match for Spain in the text:
+print(re.findall("spain", txt , re.IGNORECASE))
+# ['Spain']
+#Same result using the shorthand re.I flag:
+print(re.findall("spain",txt, re.I))
+# ['Spain']
+
+
+txt = """there
+aint much
+rain in 
+Spain"""
+
+#Search for the sequence 'ain', at the begining of a line:
+print(re.findall("^ain", txt, re.MULTILINE))
+# --> ['ain']
+#This example would return no matches without the re.MULTILINE flag, because the ^ character without re.MULTILINE only get a match at the very beginning fo the text:
+print(re.findall("^ain", txt))
+# --> []
+#Same result with the shorthand re.M flag:
+print(re.findall("^ain", txt, re.M))
+# --> ['ain']
+
+txt = "Victor"
+#Find all UNICODE matches:
+print(re.findall("\w", txt, re.UNICODE))
+# ['V', 'i', 'c', 't', 'o', 'r']
+#same result using the shorthand re.U flag:
+print(re.findall("\w", txt, re.U))
+# ['V', 'i', 'c', 't', 'o', 'r']
+
+
+txt = "The rain in Spain falls mainly on the plain"
+#find and return words that contains the phrase "ain":
+
+pattern = """
+[A-Za-z]    #starts with any letter
+ain+        #contains 'ain'
+[a-z]*      #followed by any small letter
+"""
+print(re.findall(pattern,txt,re.VERBOSE))
+# ['rain', 'pain', 'mainly', 'lain']
+
+#The examle woud return nothing without the re.VERBOSE flag
+print(re.findall(pattern,txt))
+# []
+
+#Same result woth the shorthand re.X flag;
+print(re.findall(pattern,text, re.X))
+# ['rain', 'pain']
+
+
+
