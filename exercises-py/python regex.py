@@ -273,3 +273,19 @@ else:
     print("No match")
 
 # (The "r" in the beginning is making sure that the string is being treated as a "raw string"
+
+"""\d"""
+# Returns a match where the string contains digits (numbers from 0-9)
+txt11 = "the rain in Spain 01"
+# Check if the string contain any figits (number from 0-9)
+x = re.findall("\d",txt11)
+print(x)
+if x:
+    print("Yes, there is at least one match!")
+else:
+    print("no match!")
+
+# ['0', '1']
+# Yes, there is at least one match!
+
+
