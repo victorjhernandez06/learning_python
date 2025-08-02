@@ -1,3 +1,6 @@
 for i in $(seq 10 100); do
 	touch "ejercicio_$i.py"
 done
+
+#aqui he creado archivos desde el 10 hasta el 100.. 
+debo modificarlo para crear desde el 100 hasta el 900
