@@ -289,3 +289,98 @@ else:
 # Yes, there is at least one match!
 
 
+"""\D"""
+
+#Returns a match where the string DOES NOT contain digits.
+
+txt = "The rain in Spain"
+
+#return a match at every no digit character:
+
+x = re.findall("\D",txt)
+print(x)
+if x:
+    print('Yes, there is at least one match!')
+else:
+    print("No match")
+#--> ['T', 'h', 'e', ' ', 'r', 'a', 'i', 'n', ' ', 'i', 'n', ' ', 'S', 'p', 'a', 'i', 'n']
+#--> Yes, there is at least one match!
+
+"""\s"""
+# Returns a match where the string contains a white space character
+
+txt  =  "the rain in Spain"
+#Return a match at every white-s[ace characters:
+
+x = re.findall("\s",txt)
+print(x)
+if x:
+    print('Yes, there is at least one match!')
+else:
+    print("No Match")
+
+# [' ', ' ', ' ']
+# Yes, there is at least one match!
+
+
+"""\S"""
+# Returns a match where the string DOES NOT contain a white space characters
+
+txt = "The rain in Cojedes"
+#Return a match at every NON white-space character:
+x = re.findall("\S",txt)
+print(x)
+if x:
+    print("Yes, there is at least one match!")
+else:
+    print("No Match")
+
+# ['T', 'h', 'e', 'r', 'a', 'i', 'n', 'i', 'n', 'C', 'o', 'j', 'e', 'd', 'e', 's']
+# Yes, there is at least one match!
+
+"""\w"""
+# Returns a match where the string contains any word characters (characters from a to Z, digits from 0-9 and underscore _character)
+
+txt = "the rain in Spain"
+# Return a match at every word characters(Characters from a to Z, digits from 0-9, and the underscore _Characters)
+
+x = re.findall("\w",txt)
+print(x)
+if x:
+    print("Yes, there is at least one match!")
+else:
+    print("No match")
+
+# ['t', 'h', 'e', 'r', 'a', 'i', 'n', 'i', 'n', 'S', 'p', 'a', 'i', 'n']
+# Yes, there is at least one match!
+
+
+"""\W"""
+# Returns a match where the string DOES NOT contain any word characters
+
+txt = "the rain in Spain"
+# Return a match at every NON word Character (characters NOT between a and Z, like "!", "?" thite space, etc...)
+
+x = re.findall("\W", txt)
+print(x)
+if x:
+    print("Yes, there is at least one match!")
+else:
+    print("No match")
+
+
+"""\Z"""  # "Spain\Z"
+# Returns a match fi the specified characters are at the end of the string. 
+
+txt =  "The rain in Cojedes"
+# Check if the string ends with "Cojedes"
+
+x = re.findall("Cojedes\Z", txt)
+print(x)
+if x:
+    print("Yes, there is at least one match!")
+else:
+    print("No match")
+    
+# ['Cojedes']
+# Yes, there is at least one match!
