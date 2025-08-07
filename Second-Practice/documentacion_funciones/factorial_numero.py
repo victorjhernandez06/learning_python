@@ -13,5 +13,5 @@ def factorial(n):
         return n * factorial(n -1)
     
     
-resultado_factorial = factorial(4)
+resultado_factorial = factorial(5)
 print(resultado_factorial)
