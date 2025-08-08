@@ -55,15 +55,18 @@ def insert():
 def actualizar():
     conexion = conectar()
     cursor = conexion.cursor()
-    sql ="UPDATE misdatos SET nombre=%s, apellido=%s, telefono=%s, email=%s WHERE id=%s"
-    valores = (entry_id.get(), entry_nombre.get(), entry_apellido.get(), entry_telefono.get(), entry_email.get())
+    sql = "UPDATE misdatos SET nombre=%s, apellido=%s, telefono=%s, email=%s WHERE id=%s"
+    valores = (entry_nombre.get(), entry_apellido.get(), entry_telefono.get(), entry_email.get(), entry_id.get())
     try:
         cursor.execute(sql, valores)
         conexion.commit()
-        messagebox.showinfo('Informacion',"Registro actualizado con exito!")
+        if cursor.rowcount > 0:
+            messagebox.showinfo('Información', "Registro actualizado con éxito!")
+        else:
+            messagebox.showwarning('Advertencia', "No se encontró un registro con ese ID.")
         limpiar_campos()
     except Error as e:
-        messagebox.showerror('Error',str(e))
+        messagebox.showerror('Error', str(e))
     finally:
         conexion.close()
 
