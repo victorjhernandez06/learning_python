@@ -1,4 +1,4 @@
-#!/media/victordev06/ba8f4057-c8db-4117-a632-746e776a8c12/home/victordev06/LearningPython/venv/bin/python3.12
+#!/home/victordev06/LearningPython/venv/bin/python3.11
 # -*- coding: utf-8 -*-
 import re
 import sys
