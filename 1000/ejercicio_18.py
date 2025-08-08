@@ -10,7 +10,7 @@ def sumar_numeros(a,b,c):
 
     return suma
 
-print(sumar_numeros(3,3,3))
+print(sumar_numeros(35,35,35))
 print(sumar_numeros(2,1,2))
 print('-'*50)
 a = int(input('introduzca a:'))
