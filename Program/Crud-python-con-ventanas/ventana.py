@@ -12,10 +12,16 @@ class Ventana(Frame):
     def fNuevo(self):
         pass
 
-    def fmodificar(self):
+    def fModificar(self):
         pass
 
     def fEliminar(self):
+        pass
+
+    def fCancelar(self):
+        pass
+
+    def fGuardar(self):
         pass
 
     def create_widgets(self):
@@ -25,11 +31,38 @@ class Ventana(Frame):
         self.btnNuevo =  Button(frame1, text = "Nuevo", command=self.fNuevo, bg="blue", fg="white")
         self.btnNuevo.place(x=5, y=50, width=80, height=30)
 
-        self.btnModificar = Button(frame1, text="Modificar", command=self.fmodificar(), bg="blue", fg="white")
+        self.btnModificar = Button(frame1, text="Modificar", command=self.fModificar, bg="blue", fg="white")
         self.btnModificar.place(x=5, y=90, width=80, height=30)
 
-        self.btnEliminar = Button(frame1, text="Eliminar", command=self.fNuevo, bg="blue", fg="white")
+        self.btnEliminar = Button(frame1, text="Eliminar", command=self.fEliminar, bg="blue", fg="white")
         self.btnEliminar.place(x=5, y=130, width=80, height=30)
 
+        frame2 = Frame(self, bg = "#d3dde3")
+        frame2.place(x = 95, y = 0, width=150, height=259)
 
+        lbl1 = Label(frame2, text= "ISO3: ")
+        lbl1.place(x = 3, y = 5) #no lleva alto ni ancho, es para que se ajuste al texto.
+        self.txtISO3 = Entry(frame2)
+        self.txtISO3.place(x =3, y = 25, width=50, height=20)
+
+        lbl2 = Label(frame2, text= "Country Name: ")
+        lbl2.place(x = 3, y = 55) #no lleva alto ni ancho, es para que se ajuste al texto.
+        self.txtName = Entry(frame2)
+        self.txtName.place(x =3, y = 75, width=100, height=20)
+
+        lbl3 = Label(frame2, text= "Capital: ")
+        lbl3.place(x = 3, y = 105) #no lleva alto ni ancho, es para que se ajuste al texto.
+        self.txtCapital = Entry(frame2)
+        self.txtCapital.place(x =3, y = 125, width=100, height=20)
+
+        lbl4 = Label(frame2, text= "Currency Code: ")
+        lbl4.place(x = 3, y = 5) #no lleva alto ni ancho, es para que se ajuste al texto.
+        self.txtCurrency = Entry(frame2)
+        self.txtCurrency.place(x =3, y = 175, width=50, height=20)
+
+        self.btnGuardar =  Button(frame2, text = "Guardar", command=self.fGuardar, bg="green", fg="white")
+        self.btnGuardar.place(x=10, y=210, width=60, height=30)
+
+        self.btnCancelar = Button(frame2, text="Cancelar", command=self.fCancelar, bg="red", fg="white")
+        self.btnCancelar.place(x=80, y=210, width=60, height=30)
 
