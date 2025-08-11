@@ -3,7 +3,6 @@ from ventana import*
 
 
 
-
 #01 Creamos la funcion main
 def main():
     root = Tk()
