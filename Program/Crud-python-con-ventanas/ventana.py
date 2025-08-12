@@ -24,6 +24,8 @@ class Ventana(Frame):
     def fGuardar(self):
         pass
 
+# widgets
+
     def create_widgets(self):
         frame1 = Frame(self, bg="#bfdaff")
         frame1.place(x=0, y=0, width=93, height=259)
@@ -65,4 +67,6 @@ class Ventana(Frame):
 
         self.btnCancelar = Button(frame2, text="Cancelar", command=self.fCancelar, bg="red", fg="white")
         self.btnCancelar.place(x=80, y=210, width=60, height=30)
+
+
 
