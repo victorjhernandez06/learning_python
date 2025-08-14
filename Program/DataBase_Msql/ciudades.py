@@ -33,7 +33,7 @@ def main():
         elif  opcion =='P':
             print("*** Imprimir Paises ***")
         elif  opcion =='X':
-            print("*** Saliendo ***")
+            print("*** Saliendo del sistema ***")
         else:
             print("-> Invalid option")
 
