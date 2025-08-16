@@ -48,3 +48,4 @@ prediccion_pb = modelo_pb.predict(entrada)[0]
 print("🎯 Predicción Powerball:")
 print("Números principales:", sorted(predicciones_main))
 print("Número Powerball:", prediccion_pb)
+print ("fin de programa")
