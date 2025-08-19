@@ -11,7 +11,7 @@ plt.style.use('ggplot')
 pd.set_option('display.max_columns', None)
 
 ## ---------------------------
-## 1. CONFIGURACIÓN DE RUTAS
+## 1. CONFIGURACIÓN DE RUTAS.
 ## ---------------------------
 
 # Ruta completa al archivo CSV en Linux
