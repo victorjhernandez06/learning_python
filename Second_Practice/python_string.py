@@ -157,3 +157,51 @@ txt = f"The price is {x:F} dollars"
 print(txt)
 
 
+"""STRING FORMAT()"""
+# The format(), method can still be used, but f-string are faster and the preferred way to format strings.
+# The format() method also uses curly brackets as placeholders {}, but the syntax is slightly
+
+# Example: Add a placeholder where you want to display the price:
+price = 49
+txt =  "The price is {} dollars"
+print(txt.format(price))
+
+# You can add parameters inside the curly brackets to specify how to convert the value:
+
+txt = "The price is {:.2f} dollars"
+print (txt.format(price))
+
+#check out all formating types in our String format() reference.
+
+"""Multiple Value"""
+#If you want to use more values, just add more values to the format(). method.
+# print(text.format(price, itemno, count))
+
+# and add more placeholders
+quantity = 3
+itemno = 567
+price = 49
+myorder = "I want {} pieces of item number {} for {:.2f} dollars"
+print(myorder.format(quantity, itemno, price))
+
+"""INDEX NUMBERS"""
+# you can use index numbers(a number inside the curly brackets {0} to be sure the values are placed in the correct placeholders.
+quantity = 4
+itemno = 568
+price = 50
+myorder = "I want {0} pieces of items number {1} for {2:.2f} dollars."
+print(myorder.format(quantity, itemno, price))
+
+#also if you want to refer to the same value more than once, use the index number:
+
+age = 42
+name = "Victor"
+txt = "His name is {1}. {1} is {0} years old."
+print(txt.format(age, name))
+
+"""NAMED INDEXES"""
+# You can also use named indexes by entering a name inside the curly brackets {carname}, but then you must use names when you pass the parameters values txt.format(carname ="Ford"):
+
+myorder = "I have a {carname}, it is a {model}."
+print(myorder.format(carname = "Ford", model = "Mustang"))
+
