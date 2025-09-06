@@ -1,0 +1,1 @@
+# Obtener el nombre de usuario atual. 

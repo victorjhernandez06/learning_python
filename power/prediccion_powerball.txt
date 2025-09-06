@@ -1,0 +1,19 @@
+PREDICCIÓN POWERBALL - 2025-09-05 21:00:16.242208
+==================================================
+
+🗓️  Total de sorteos analizados: 516
+
+🎯 PREDICCIÓN DEL MODELO:
+Números principales: [6, 19, 40, 53, 62]
+Powerball: 20
+
+📊 ANÁLISIS DE FRECUENCIAS:
+Números más frecuentes: [1, 2, 3, 6, 7, 8, 12, 13, 16, 21, 33, 40, 42, 43, 44]
+Powerballs más frecuentes: [2, 3, 9, 20, 22]
+
+💡 RECOMENDACIONES FINALES:
+Números a jugar: [2, 6, 8, 12, 13, 16, 19, 33, 40, 43, 44, 53, 62]
+Powerballs a jugar: [9, 20, 22]
+
+⚠️  NOTA: Esto es solo una predicción estadística.
+Los juegos de azar deben jugarse con responsabilidad.
