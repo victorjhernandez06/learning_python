@@ -9,10 +9,6 @@ import os
 
 
 # --- Configuración y Carga de Datos ---
-# Asegúrate de que tu archivo CSV se llama 'data - hoja.csv' y está en el mismo directorio
-# El archivo debe tener columnas para los 5 números principales y una para la Powerball.
-# Basándonos en tu error, las columnas parecen tener nombres numéricos y 'Unnamed'.
-
 def cargar_datos(nombre_archivo):
     """
     Carga los datos del archivo CSV, lo convierte en un DataFrame de pandas
@@ -24,19 +20,23 @@ def cargar_datos(nombre_archivo):
         print("Creando datos de ejemplo para demostración.")
         data_ejemplo = {
             'draw_date': pd.to_datetime(['2024-01-01', '2024-01-04', '2024-01-08']),
-            '1': [10, 15, 20],
-            '6': [25, 30, 35],
-            '7': [40, 45, 50],
-            'Unnamed: 8': [55, 60, 65],
-            'Unnamed: 9': [70, 75, 80],
-            'Unnamed: 10': [1, 5, 10]
+            'num_1': [10, 15, 20],
+            'num_2': [25, 30, 35],
+            'num_3': [40, 45, 50],
+            'num_4': [55, 60, 65],
+            'num_5': [70, 75, 80],
+            'powerball': [1, 5, 10]
         }
         df = pd.DataFrame(data_ejemplo)
         return df
 
     try:
-        df = pd.read_csv(nombre_archivo)
+        # Cargamos el archivo sin encabezados para evitar problemas con los nombres de las columnas
+        df = pd.read_csv(nombre_archivo, header=None)
         print("Datos cargados correctamente. Mostrando las primeras filas:")
+        # Opcional: Asignamos nombres de columna más claros para el análisis
+        df.columns = ['extra1', 'num1', 'num2', 'num3', 'num4', 'num5', 'extra2', 'powerball']
+
         print(df.head())
         return df
     except Exception as e:
@@ -52,13 +52,11 @@ def analizar_frecuencia(df):
     if df is None:
         return None, None
 
-    # Las columnas se han ajustado según el error que has compartido.
-    # Por favor, verifica que estos nombres de columna sean correctos y ajusta si es necesario.
-    columnas_numeros = ['1', '6', '7', 'Unnamed: 8', 'Unnamed: 9']
-    powerball_column = 'Unnamed: 10'
+    # Las columnas se han ajustado para usar los nombres asignados
+    columnas_numeros = ['num1', 'num2', 'num3', 'num4', 'num5']
+    powerball_column = 'powerball'
 
     # Concatenamos todas las columnas de números en una sola Serie
-    # `pd.concat` es útil para unir datos de varias columnas en una
     numeros = pd.concat([df[columna] for columna in columnas_numeros])
 
     # `value_counts()` cuenta cuántas veces aparece cada valor único
@@ -123,5 +121,44 @@ def main():
         visualizar_frecuencia(frecuencia_nums, frecuencia_pb)
 
 
+# --- Predicción de Números ---
+def predecir_numeros(frecuencia_numeros, frecuencia_powerball):
+    """
+    Selecciona los 5 números principales y la Powerball con mayor frecuencia.
+    """
+    if frecuencia_numeros is None or frecuencia_powerball is None:
+        print("No se pueden predecir los números. Datos de frecuencia no disponibles.")
+        return None, None
+
+    # Obtenemos los 5 números con mayor frecuencia del DataFrame principal
+    top_5_numeros = frecuencia_numeros.head(5)['numero'].tolist()
+
+    # Obtenemos la Powerball con mayor frecuencia
+    top_powerball = frecuencia_powerball.head(1)['numero'].tolist()
+
+    print("\n--- ¡Tu Predicción de la Lotería de Powerball! ---")
+    print(f"Los 5 números principales más frecuentes son: {top_5_numeros}")
+    print(f"La Powerball más frecuente es: {top_powerball[0]}")
+
+    return top_5_numeros, top_powerball[0]
+
+
+# --- Ejecución Principal ---
+def main():
+    """
+    Función principal que orquesta el flujo de trabajo.
+    """
+    nombre_archivo_csv = 'data - hoja.csv'
+    df = cargar_datos(nombre_archivo_csv)
+    if df is not None:
+        frecuencia_nums, frecuencia_pb = analizar_frecuencia(df)
+        visualizar_frecuencia(frecuencia_nums, frecuencia_pb)
+
+        # Llamamos a la nueva función de predicción
+        predecir_numeros(frecuencia_nums, frecuencia_pb)
+
+
 if __name__ == '__main__':
     main()
+
+
